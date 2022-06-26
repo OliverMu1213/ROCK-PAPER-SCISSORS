@@ -29,11 +29,11 @@ function playRound(playerSelection, computerSelection){
         }else if(playerChoice=="Paper"){
             return "win";
         }else if(playerChoice=="Scissors"){
-            return "lose";
+            return "lost";
         }
     }else if(computerSelection=="Paper"){
         if(playerChoice=="Rock"){
-            return "lose";
+            return "lost";
         }else if(playerChoice=="Paper"){
             return "draw";
         }else if(playerChoice=="Scissors"){
@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection){
         if(playerChoice=="Rock"){
             return "win";
         }else if(playerChoice=="Paper"){
-            return "lose";
+            return "lost";
         }else if(playerChoice=="Scissors"){
             return "draw";
         }
@@ -59,26 +59,28 @@ function game(){
             break;
         }
         do{
-            var playerChoice = capitalize(prompt("Please enter you choice: "));
+            var playerChoice = capitalize(prompt("Please enter you choice:'Rock' 'Paper' or 'Scissors' "));
         }while(!checkResult(playerChoice))
         var computerSelection = computerPlay();
         var result = playRound(playerChoice, computerSelection);
         switch(result){
             case "win":
                 playerPoints++;
-                console.log(`You ${result}! ${playerChoice} beats ${computerSelection} `) ;
-                console.log(`Player Points: ${playerPoints} - Computer Points: ${computerPoints}`);
+                alert(`You ${result}! ${playerChoice} beats ${computerSelection} \nPlayer Points: ${playerPoints} - Computer Points: ${computerPoints}`) ;
                 break;
-            case "lose":
+            case "lost":
                 computerPoints++;
-                console.log(`You ${result}! ${computerSelection} beats ${playerChoice} `);
-                console.log(`Player Points: ${playerPoints} - Computer Points: ${computerPoints}`);
+                alert(`You ${result}! ${computerSelection} beats ${playerChoice} \nPlayer Points: ${playerPoints} - Computer Points: ${computerPoints}`);
                 break;
             case "draw":
-                console.log("The game is a draw") ;
-                console.log(`Player Points: ${playerPoints} - Computer Points: ${computerPoints}`);
+                alert("The game is a draw \nPlayer Points: ${playerPoints} - Computer Points: ${computerPoints}") ;
                 break;
         }
+    }
+    if(playerPoints ==3&&computerPoints!=3){
+        alert("Congradulation, You Won!");
+    }else{
+        alert("Unfortunately, You Lost!");
     }
 }
 

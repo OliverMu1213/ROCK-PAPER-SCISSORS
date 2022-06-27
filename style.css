@@ -1,0 +1,38 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.buttons{
+    display:flex;
+    justify-content: center;
+    gap: 55px;
+    margin-bottom:20px;
+}
+
+.display{
+    display:flex;
+    margin-top:10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    
+}
+.result{
+    font-size: 20px;
+}
+
+#final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header{
+    color:blueviolet;
+    text-align: center;
+}
